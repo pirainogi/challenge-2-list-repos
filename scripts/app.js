@@ -1,8 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
     // console.log('document ready');
 
+    // grabbing the container to add all of my repo cards to
     repoContainer = document.getElementById("repo-container")
 
+    // fn makes the fetch to the Github API and then maps over all the
+    // returned data and returns HTML
+    // then adds the returned HTML to the container element
     getRepos = () => {
       fetch('https://api.github.com/users/pirainogi/repos')
       .then(r => r.json())
@@ -12,6 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
       })
     }
 
+    //makes HTML for above
     repoHTML = (repo) => {
       return `
       <div class="row repo">
@@ -44,5 +49,6 @@ document.addEventListener("DOMContentLoaded", function() {
       `
     }
 
+    //call the fn to make the fetch and render the repos on the DOM 
     getRepos()
 });
