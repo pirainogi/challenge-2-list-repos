@@ -49,6 +49,11 @@ document.addEventListener("DOMContentLoaded", function() {
       `
     }
 
-    //call the fn to make the fetch and render the repos on the DOM 
+    //call the fn to make the fetch and render the repos on the DOM
     getRepos()
 });
+
+// I would have liked to find a way to pull either the most recent repos
+// or my starred repos instead of just the first 30 alphabetically
+// but the API keeps returning a 403 error related to my IP hitting their API
+// too frequently. :/ 
