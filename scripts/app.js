@@ -11,8 +11,9 @@ document.addEventListener("DOMContentLoaded", function() {
       fetch('https://api.github.com/users/pirainogi/repos')
       .then(r => r.json())
       .then(data => {
+        // console.log(data);
         let html = data.map(repodata => repoHTML(repodata))
-        repoContainer.innerHTML = html
+        repoContainer.innerHTML = html.join('')
       })
     }
 
@@ -56,4 +57,4 @@ document.addEventListener("DOMContentLoaded", function() {
 // I would have liked to find a way to pull either the most recent repos
 // or my starred repos instead of just the first 30 alphabetically
 // but the API keeps returning a 403 error related to my IP hitting their API
-// too frequently. :/ 
+// too frequently. :/
